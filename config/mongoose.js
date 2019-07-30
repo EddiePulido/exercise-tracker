@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var fs = require("fs");
 var path = require("path");
 
-mongoose.connect("mongodb://localhost/exercise-app",{useNewUrlParser:true});
+mongoose.connect(process.env.MONGDB_URI || "mongodb://localhost/exercise-app",{useNewUrlParser:true});
 
 // create a variable that points to the path where all of the models live
 var models_path = path.join(__dirname, "./../models");
